@@ -1,0 +1,36 @@
+{
+  "name": "roit-base-lib",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc --incremental -p tsconfig.build.json",
+    "deploy": "npm run build && npm run test:cov && npm publish --access public --scope=roit",
+    "test": "jest --passWithNoTests",
+    "test:cov": "jest --coverage"
+  },
+  "author": "Author",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^6.0.46",
+    "jest": "^27.3.1",
+    "ts-jest": "^27.0.7",
+    "ts-node": "^8.3.0",
+    "typescript": "4.4.4"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": ".",
+    "testRegex": ".(spec|test).ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "keywords": []
+}
